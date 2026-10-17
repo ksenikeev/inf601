@@ -55,6 +55,52 @@ public class Labirint {
             }
         }
     }
+
+    static void moves(){
+        String direction = getDirection();
+        countStep++;
+        switch (direction) {
+            case "U": case "u":
+                if (positionRow == 0){
+                    break;
+                }
+                if(field[positionRow - 1][positionColumn] == 0) {
+                    status[positionRow][positionColumn] = '#';
+                    status[positionRow - 1][positionColumn] = '*';
+                    positionRow -= 1;
+                }else{
+                    status[positionRow - 1][positionColumn] = 'x';
+                }
+                break;
+            case "D": case "d":
+                if (positionRow == field.length - 1){
+                    break;
+                }
+                if(field[positionRow + 1][positionColumn] == 0) {
+                    status[positionRow][positionColumn] = '#';
+                    status[positionRow + 1][positionColumn] = '*';
+                    positionRow += 1;
+                }else{
+                    status[positionRow + 1][positionColumn] = 'x';
+                }
+                break;
+
+            case "D": case "d":
+                if (positionRow == field.length - 1){
+                    break;
+                }
+                if(field[positionRow + 1][positionColumn] == 0) {
+                    status[positionRow][positionColumn] = '#';
+                    status[positionRow + 1][positionColumn] = '*';
+                    positionRow += 1;
+                }else{
+                    status[positionRow + 1][positionColumn] = 'x';
+                }
+                break;
+
+        }
+
+    }
     // Описать структуру данных
     // вывод состояния
     // ввод направления
