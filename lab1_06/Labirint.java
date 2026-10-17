@@ -25,6 +25,7 @@ public class Labirint {
             showStatus();
             moves();
         }
+        showStatus();
         System.out.println("Победа! Лабиринт пройден за " + countStep + " шагов");
     }
 
