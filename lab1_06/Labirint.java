@@ -21,8 +21,11 @@ public class Labirint {
     static int exitColumn = 4;
     static int countStep = 0;
     public static void main(String[] args) {
-        showStatus();
-        getDirection();
+        while (!isWin()) {
+            showStatus();
+            moves();
+        }
+        System.out.println("Победа! Лабиринт пройден за " + countStep + " шагов");
     }
 
     public static void showStatus(){
@@ -85,21 +88,38 @@ public class Labirint {
                 }
                 break;
 
-            case "D": case "d":
-                if (positionRow == field.length - 1){
+            case "L": case "l":
+                if (positionColumn == 0){
                     break;
                 }
-                if(field[positionRow + 1][positionColumn] == 0) {
+                if(field[positionRow][positionColumn - 1] == 0) {
                     status[positionRow][positionColumn] = '#';
-                    status[positionRow + 1][positionColumn] = '*';
-                    positionRow += 1;
+                    status[positionRow][positionColumn - 1] = '*';
+                    positionColumn -= 1;
                 }else{
-                    status[positionRow + 1][positionColumn] = 'x';
+                    status[positionRow][positionColumn - 1] = 'x';
+                }
+                break;
+
+            case "R": case "r":
+                if (positionColumn == field[0].length - 1){
+                    break;
+                }
+                if(field[positionRow][positionColumn + 1] == 0) {
+                    status[positionRow][positionColumn] = '#';
+                    status[positionRow][positionColumn + 1] = '*';
+                    positionColumn += 1;
+                }else{
+                    status[positionRow][positionColumn + 1] = 'x';
                 }
                 break;
 
         }
 
+    }
+
+    static boolean isWin() {
+        return positionColumn == exitColumn && positionRow == exitRow;
     }
     // Описать структуру данных
     // вывод состояния
