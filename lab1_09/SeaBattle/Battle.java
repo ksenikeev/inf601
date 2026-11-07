@@ -8,5 +8,6 @@ public class Battle {
 
         System.out.println(seaBattleField.ships);
         //seaBattleField.createField();
+        seaBattleField.showField();
     }
 }
