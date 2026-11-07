@@ -10,4 +10,12 @@ public class Ship {
 
     public byte state;
     public byte[] statePart;
+
+    public Ship(byte size, byte xStart, byte yStart, byte xEnd, byte yEnd) {
+        this.size = size;
+        this.xStart = xStart;
+        this.yStart = yStart;
+        this.xEnd = xEnd;
+        this.yEnd = yEnd;
+    }
 }
