@@ -8,7 +8,7 @@ public class ChessDesk {
 
     // расстановка фигур
     public void createDesk() {
-        Pawn pawn = new Pawn(0, 1, "White")
+        Pawn pawn = new Pawn(0, 1, "White");
     }
 
     /**
@@ -26,14 +26,14 @@ public class ChessDesk {
             case 'g', 'G' -> 6;
             case 'h', 'H' -> 7;
             default -> -1;
-        }
+        };
         int r = row - 1;
         return desk[r][c];
     }
 
     public void show() {
         for (int i = 0; i < 8; ++i) {
-            for (j = 7; j >= 0; --j) {
+            for (int j = 7; j >= 0; --j) {
                 char c = desk[j][i] == null ? '_' : '\u2659';
                 System.out.print(c);
             }

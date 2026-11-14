@@ -5,7 +5,7 @@ public class Pawn extends Figure {
     }
 
     @Override
-    public boolean сheckPosition(int column, int row) {
+    public boolean checkPosition(int column, int row) {
 
         if (this.color.equals("white")) {
             if (this.column == column && this.row + 1 == row) return true;
