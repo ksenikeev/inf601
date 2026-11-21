@@ -11,9 +11,9 @@ public class Turtle extends Animal {
         int[] currentDirection = direction;
         int[] step = rndStep();
         int newX = x + step[0];
-        int newY = x + step[1];
+        int newY = y + step[1];
 
-        if (newX < 0 || newX > 999 || newY < 0 || newY > 999) {
+        if (newX < 0 || newX > Game.fieldWidth || newY < 0 || newY > Game.fieldHeight) {
             direction = currentDirection;
         } else {
             x = newX;
