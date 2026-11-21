@@ -25,4 +25,6 @@ public abstract class Figure {
             this.row = row;
         }
     }
+
+    public abstract String getPresent();
 }

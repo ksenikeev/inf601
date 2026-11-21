@@ -22,4 +22,8 @@ public class Pawn extends Figure {
         return false;
     }
 
+    @Override
+    public String getPresent() {
+        return color.equals("white") ? String.valueOf('\u2659') : String.valueOf('\u265F');
+    }
 }
